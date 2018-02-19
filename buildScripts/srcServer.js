@@ -1,9 +1,17 @@
-var express = require('express');
+/*var express = require('express');
 var path = require('path');
 var open = require('open');
 
 var port = 3000;
-var app = express();
+var app = express(); */
+
+//Use ES6 syntax
+import express from 'express';
+import path from 'path';
+import open from 'open';
+
+const port = 3000;
+const app = express();
 
 //Tell express which routes it should handle
 //Any references to the root will be handled by this function
