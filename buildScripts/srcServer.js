@@ -9,9 +9,17 @@ var app = express(); */
 import express from 'express';
 import path from 'path';
 import open from 'open';
+import webpack from 'webpack';
+import config from '../webpack.config.dev'
 
 const port = 3000;
 const app = express();
+const compiler = webpack(config);
+
+app.use(require('webpack-dev-middleware')(comiler,{
+	noInfo: true,
+	publicPath: config.output.publicPath
+}));
 
 //Tell express which routes it should handle
 //Any references to the root will be handled by this function
